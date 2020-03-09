@@ -17,6 +17,18 @@ public class Product {
 	protected Product() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	
+	public Product(String name, String brand, String madein, double price) {
+		super();
+	
+		this.name = name;
+		this.brand = brand;
+		this.madein = madein;
+		this.price = price;
+	}
+
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public int getId() {
