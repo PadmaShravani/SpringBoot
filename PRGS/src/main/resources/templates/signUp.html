@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up</title>
+     
+  <link href="../css/signup.css" rel="stylesheet" type="text/css"> 
+ <style type="text/css">
+ * {
+    box-sizing: border-box;
+}
+
+body{
+padding-top: 10vh;
+background-image: url("../image/signup.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+.container{
+width:410px;
+height: 380px;
+padding: 20px 30px;
+background-color: rgb(231, 224, 228);
+border-radius: 10px;
+box-shadow: 0 0 10px 0 #000;
+margin: auto;
+}
+.length{
+width: 345px;
+}
+.button{
+float: right;
+}
+ 
+ 
+ 
+ </style>
+ 
+ 
+ 
+</head>
+<body>
+    <form action="#" th:action="@{/save}" th:object="${users}"
+			method="post">
+   
+    <div class="container">
+        <h4 style="text-align: center;">Creating your own PRGS Account</h4>
+        <input type="text"  th:field="*{firstName}" name="firstName" placeholder="FirstName *" required > 
+        <input type="text" name="lastName"  placeholder="LastName *" th:field="*{lastName}" > <br><br>
+        <input class="length" type="text" name="User name" placeholder="User Name *"th:field="*{userName}" > <br><br>
+     <span class="red" th:if="${#fields.hasErrors('userName')}"
+                    th:errors="*{userName}"></span>
+        <input class="length" type="email" name="email" placeholder="email *" th:field="*{email}" > <br><br>
+        <input type="password" name="password" placeholder="Password *" th:field="*{password}" > 
+        <input  type="password" name="Confirm password" placeholder="Confirm Password *"  > <br>
+        <small>use 8 or more characters with letters,numbers and symbols</small><br><br>
+        
+        <label>Date Of Birth &nbsp;</label>
+        <input  class="alignment" type="date" name="DateOfBirth" th:field="*{dateOfBirth}" > <br><br>
+       <!-- <input  type="radio" name="gender"
+            value="Femail">
+            <label>Female</label>
+            <input type="radio" name="gender" value="Mail">
+            <label>Male</label>
+            <input type="radio" name="gender" value="Others">
+            <label>Others</label><br><br> --> 
+            <a href="../html/UserViewPage.html"><button title="Click to register">Register</button></a>
+        </div>   
+</form>
+
+   
+</body>
+</html>
